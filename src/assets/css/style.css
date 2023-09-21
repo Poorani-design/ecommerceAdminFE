@@ -69,7 +69,7 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -250px;
     bottom: 0;
     width: 250px;
     height: 100vh;
@@ -78,12 +78,21 @@
     transition: 0.5s;
     z-index: 999;
 }
+.sidebar.active{
+    left:0;
+}
 
 .content {
-    margin-left: 250px;
+    margin-left: 0px;
     min-height: 100vh;
     background: #FFFFFF;
     transition: 0.5s;
+    max-width: 100%;
+    width: 100%;
+}
+.content.active{
+    margin-left:250px;
+    width: calc(100% - 250px);
 }
 
 @media (min-width: 992px) {
@@ -95,9 +104,9 @@
         margin-left: -250px;
     }
 
-    .content {
+    /* .content {
         width: calc(100% - 250px);
-    }
+    } */
 
     .content.open {
         width: 100%;

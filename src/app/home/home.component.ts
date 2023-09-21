@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isSidebarShowing = true;
 
+  toggleSidebar(){
+    this.isSidebarShowing = !this.isSidebarShowing;
+    console.log(this.isSidebarShowing);
+  }
 }
